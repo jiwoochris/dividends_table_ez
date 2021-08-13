@@ -1,31 +1,36 @@
 from PyQt5.QtWidgets import *
-from PyQt5 import uic
-import pyupbit
+from PyQt5 import uic, QtWidgets
+import sys
 
 class MyWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("16-3.ui", self)
+        uic.loadUi("index.ui", self)
 
-        self.BTC.clicked.connect(self.check_BTC)
-        self.LTC.clicked.connect(self.check_LTC)
-        self.XRP.clicked.connect(self.check_XRP)
+        self.update_button.clicked.connect(self.update)
 
-    def check_BTC(self):
-        price = pyupbit.get_current_price("KRW-BTC")
-        self.BTC_price.setText(str(price))
+        self.show()
 
-    def check_LTC(self):
-        price = pyupbit.get_current_price("KRW-LTC")
-        self.LTC_price.setText(str(price))
-
-    def check_XRP(self):
-        price = pyupbit.get_current_price("KRW-XRP")
-        self.XRP_price.setText(str(price))
-            
+    def update(self):
+        self.widget= MyApp()
+        self.widget.show()
 
 
-app = QApplication( [] )
-label = MyWindow()
-label.show()
-app.exec_()
+
+
+class MyApp(QWidget):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi("change.ui", self)
+
+
+
+if __name__ == '__main__':
+    app = QApplication( [] )
+    label = MyWindow()
+    label.show()
+    
+    try:
+        app.exec_()
+    except:
+        print("Exiting")
