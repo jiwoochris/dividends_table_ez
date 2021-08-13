@@ -1,15 +1,42 @@
-import pandas as pd
-from bs4 import BeautifulSoup
-from urllib.request import Request, urlopen
-import requests
+from PyQt5.QtWidgets import *
+from PyQt5 import uic, QtWidgets
+import sys
 
-url = 'https://www.investing.com/equities/starbucks-corp-dividends'
+class MyWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi("index.ui", self)
 
-req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        self.update_button.clicked.connect(self.update)
 
-with urlopen(req) as doc:
-    html = BeautifulSoup(doc, 'lxml')
-    pgrr = html.find(class_='left first')
-    # s = str(pgrr.a['href']).split('=')
-    # last_page = s[-1]
-    print(pgrr)
+        self.show()
+
+    def update(self):
+        self.widget= MyApp()
+        self.widget.show()
+
+
+
+
+class MyApp(QWidget):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi("change.ui", self)
+
+        self.update_button.clicked.connect(self.update)
+    
+    def update(self):
+        print(self.goals.text())
+        self.close()
+
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    label = MyWindow()
+    label.show()
+    
+    try:
+        app.exec_()
+    except:
+        print("Exiting")
