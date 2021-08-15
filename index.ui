@@ -48,6 +48,9 @@
     <property name="editTriggers">
      <set>QAbstractItemView::NoEditTriggers</set>
     </property>
+    <property name="sortingEnabled">
+     <bool>true</bool>
+    </property>
     <property name="rowCount">
      <number>10</number>
     </property>
@@ -64,7 +67,7 @@
      <number>163</number>
     </attribute>
     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-     <bool>false</bool>
+     <bool>true</bool>
     </attribute>
     <attribute name="horizontalHeaderStretchLastSection">
      <bool>false</bool>
@@ -453,6 +456,78 @@
       <set>AlignCenter</set>
      </property>
     </item>
+    <item row="1" column="0">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+    </item>
+    <item row="1" column="1">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+    </item>
+    <item row="1" column="2">
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+    </item>
+    <item row="1" column="3">
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+    </item>
+    <item row="1" column="4">
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+    </item>
+    <item row="1" column="5">
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+    </item>
+    <item row="1" column="6">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+    </item>
+    <item row="1" column="7">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+    </item>
+    <item row="1" column="8">
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+    </item>
+    <item row="1" column="9">
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+    </item>
+    <item row="1" column="10">
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+    </item>
+    <item row="1" column="11">
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+    </item>
    </widget>
    <widget class="QLabel" name="balance_label">
     <property name="geometry">
@@ -528,16 +603,6 @@
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionchange_goals">
-   <property name="text">
-    <string>change goals</string>
-   </property>
-  </action>
-  <action name="actionchange_portfolio">
-   <property name="text">
-    <string>change portfolio</string>
-   </property>
-  </action>
  </widget>
  <resources/>
  <connections/>

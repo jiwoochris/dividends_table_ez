@@ -151,6 +151,22 @@
     <string>update</string>
    </property>
   </widget>
+  <widget class="QLabel" name="data">
+   <property name="geometry">
+    <rect>
+     <x>5</x>
+     <y>510</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>1개당 5초</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

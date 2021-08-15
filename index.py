@@ -1,11 +1,15 @@
 from PyQt5.QtWidgets import *
 from PyQt5 import uic, QtWidgets
+from PyQt5.QtGui import QIcon
 import sys
 
 class MyWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi("index.ui", self)
+
+        self.setWindowTitle("Dividends table by Jiwoo")
+        self.setWindowIcon(QIcon('coin_icon.png'))
 
         self.update_button.clicked.connect(self.update)
 
@@ -19,9 +23,6 @@ class MyWindow(QMainWindow):
 
         self.upload()
 
-        # self.widget= MyApp()
-        # self.widget.show()
-
     def upload(self):
         balance = 0
         div = 0
@@ -31,9 +32,6 @@ class MyWindow(QMainWindow):
         for i in range(7):
             for j in range(9):
                 self.table.setItem(i+1, j+1, None)
-
-        # self.table.clear()
-        # self.table.setItem(0, 0, QTableWidgetItem("long name"))
 
         with open("goals.txt") as f:
             goal = f.readline()
@@ -56,7 +54,6 @@ class MyWindow(QMainWindow):
                                 cal[j] = cal[j] + ", " + lines[i-5].strip()
                             div_cal[j] += float(lines[i-2].strip())
 
-
                     for j in range(12):
                         if str(j+1) in lines[i].strip()[1:-1].split(", "):
                             if cal[j] == "":
@@ -65,8 +62,6 @@ class MyWindow(QMainWindow):
                             else:
                                 cal[j] = cal[j] + ", " + lines[i-5].strip()
                                 div_cal[j] += float(lines[i-2].strip())
-                
-            print(cal)
 
             for i in range(12):
                 self.calendar.setItem(1, i, QTableWidgetItem(cal[i]))
@@ -78,7 +73,6 @@ class MyWindow(QMainWindow):
             self.progressBar.setValue(int(div/12 / float(goal.strip()) * 100))
 
             self.calendar.setRowHeight(1, 80)
-            
 
 
 
@@ -86,6 +80,9 @@ class MyApp(QDialog):
     def __init__(self):
         super().__init__()
         uic.loadUi("update.ui", self)
+
+        self.setWindowTitle("Update your account")
+        self.setWindowIcon(QIcon('coin_icon.png'))
 
         self.update_button.clicked.connect(self.pushButtonClicked)
 
@@ -120,27 +117,26 @@ class MyApp(QDialog):
             for i in range(20):
                 if self.table.item(int(i/2), i % 2) != None:
                     if self.table.item(int(i/2), i % 2).text() != "":
-                        print(self.table.item(int(i/2), i % 2).text())
                         if i % 2 == 0:
-                            msft = yf.Ticker(self.table.item(int(i/2), 0).text())
-                            f.write(f"{msft.info['longName']}\n")
-                            f.write(f"{msft.info['symbol']}\n")
+                            ticker = yf.Ticker(self.table.item(int(i/2), 0).text())
+                            f.write(f"{ticker.info['longName']}\n")
+                            f.write(f"{ticker.info['symbol']}\n")
+                            print(self.table.item(int(i/2), 0).text())
 
                         if i % 2 == 1:
                             amount = int(self.table.item(int(i/2), i % 2).text())
                             f.write(f"{amount}\n")
-                            f.write(f"{msft.info['currentPrice'] * amount : .3f}\n")
-                            f.write(f"{amount * msft.dividends[-1] * 0.85 : .3f}\n")
+                            f.write(f"{ticker.info['currentPrice'] * amount : .3f}\n")
+                            f.write(f"{amount * ticker.dividends[-1] * 0.85 : .3f}\n")
 
-                            if pd.Series(msft.dividends[-12:].index).dt.month.nunique() == 12:
-                                f.write(f"{12* amount * msft.dividends[-1] : .3f}\n")
+                            if pd.Series(ticker.dividends[-12:].index).dt.month.nunique() == 12:
+                                f.write(f"{12* amount * ticker.dividends[-1] : .3f}\n")
                                 f.write(f"monthly\n")
                             else:
-                                f.write(f"{pd.Series(msft.dividends[-4:].index).dt.month.nunique() * amount * msft.dividends[-1] * 0.85 : .3f}\n")
-                                f.write(f"{set(pd.Series(msft.dividends[-4:].index).dt.month)}\n")
+                                f.write(f"{pd.Series(ticker.dividends[-4:].index).dt.month.nunique() * amount * ticker.dividends[-1] * 0.85 : .3f}\n")
+                                f.write(f"{set(pd.Series(ticker.dividends[-4:].index).dt.month)}\n")
                             
                     
-
         self.close()
 
 
