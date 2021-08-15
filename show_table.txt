@@ -1,0 +1,35 @@
+Starbucks Corporation
+SBUX
+5
+ 583.800
+ 1.912
+ 7.650
+{8, 2, 11, 5}
+3M Company
+MMM
+3
+ 601.740
+ 3.774
+ 15.096
+{8, 2, 11, 5}
+Verizon Communications Inc.
+VZ
+2
+ 111.740
+ 1.068
+ 4.270
+{1, 10, 4, 7}
+PepsiCo, Inc.
+PEP
+3
+ 469.560
+ 2.741
+ 10.965
+{9, 3, 12, 6}
+Realty Income Corporation
+O
+1
+ 71.950
+ 0.201
+ 2.832
+monthly
