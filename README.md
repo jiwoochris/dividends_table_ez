@@ -12,4 +12,8 @@
 
 ![prt sc](https://github.com/juicyjung/dividends_table_ez/blob/main/dividends_table_ez_printscreen.png)
 
+[업데이트 화면]
+
+![upd prt sc](https://github.com/juicyjung/dividends_table_ez/blob/main/update_printscreen.png)
+
 made by jiwoo (travelandi01@gmail.com)
