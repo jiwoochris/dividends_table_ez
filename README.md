@@ -1,4 +1,4 @@
-# j_dividends
+# dividends_table_ez
 
 다운로드 링크 : https://drive.google.com/file/d/1TjqtKUGxmPQQg2kq_BP1OEFAXg2Q_UcM/view?usp=sharing
 
