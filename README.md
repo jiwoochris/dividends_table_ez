@@ -8,8 +8,7 @@
 
 월별 배당금, 목표 설정, 배당이 언제, 얼마나 들어오는지 직접 조사해보지 않아도 티커, 수량만 입력하면 자동으로 다 조사해서 정리해준다.
 
-
-
+[메인 화면]
 
 ![prt sc](https://github.com/juicyjung/dividends_table_ez/blob/main/dividends_table_ez_printscreen.png)
 
