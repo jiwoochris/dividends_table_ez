@@ -3,6 +3,9 @@
 다운로드 링크(7z) : https://drive.google.com/file/d/1xm3i85VKCXNyHbMe7wmvsp9AqvuBqgUM/view?usp=sharing
 
 
+다운로드 링크(zip) : https://drive.google.com/file/d/1i3uK8j72voHbLjhSIacIuwyCD4GTJrme/view?usp=sharing
+
+
 내가 쓰려고 만든 미국 배당주 투자 할 때 쓰기 편한 프로그램
 
 
