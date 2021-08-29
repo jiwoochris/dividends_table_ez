@@ -19,4 +19,8 @@
 
 ![upd prt sc](https://github.com/juicyjung/dividends_table_ez/blob/main/update_printscreen.png)
 
++ 한국 주식 버전
+
+
+
 made by jiwoo (travelandi01@gmail.com)
